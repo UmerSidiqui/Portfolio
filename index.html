@@ -6,20 +6,124 @@
 -->
 <html>
 	<head>
-		<title> UM3R Portfolio</title>
+		<title>UM3R Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
+			/* Improved image gallery styling */
+			.image-gallery {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+				gap: 20px;
+				margin: 20px 0;
+			}
+			
+			.image-gallery .image {
+				width: 100%;
+				position: relative;
+				overflow: hidden;
+				border-radius: 8px;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			
+			.image-gallery .image:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+			}
+			
 			.image-gallery img {
-				width: 100%; /* Ensure images fill the container */
-				height: 300px; /* Set a fixed height */
-				object-fit: cover; /* Maintain aspect ratio without distortion */
-				border-radius: 8px; /* Optional: adds rounded corners for a nicer look */
-				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: adds a soft shadow */
-				margin: 10px;
-				display: block; /* Ensures no extra space below images */
+				width: 100%;
+				height: auto; /* Changed from fixed height to auto */
+				display: block;
+				transition: all 0.3s ease;
+			}
+			
+			/* Project section styling */
+			#projects section {
+				margin-bottom: 40px;
+				padding-bottom: 20px;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			}
+			
+			#projects section:last-child {
+				border-bottom: none;
+			}
+			
+			#projects h3 {
+				margin-bottom: 10px;
+			}
+			
+			#projects p:first-of-type {
+				color: #64ffda;
+				font-size: 0.9em;
+				margin-bottom: 15px;
+			}
+			
+			/* Enhanced contact section */
+			#contact p {
+				margin: 10px 0;
+			}
+			
+			#contact .icons {
+				margin-top: 30px;
+			}
+			
+			/* Button styling */
+			.button {
+				display: inline-block;
+				background-color: #64ffda;
+				color: #1a1a1a !important;
+				padding: 0.5em 1.5em;
+				border-radius: 4px;
+				font-weight: bold;
+				text-decoration: none;
+				transition: background-color 0.3s ease;
+				margin-top: 10px;
+			}
+			
+			.button:hover {
+				background-color: #4ad3b3;
+			}
+			
+			/* Add a back to top button */
+			.back-to-top {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				background: rgba(255, 255, 255, 0.1);
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-decoration: none;
+				opacity: 0;
+				transition: opacity 0.3s;
+				z-index: 1000;
+			}
+			
+			.back-to-top.visible {
+				opacity: 1;
+			}
+			
+			/* Responsive improvements */
+			@media screen and (max-width: 736px) {
+				.image-gallery {
+					grid-template-columns: 1fr;
+				}
+				
+				#header nav ul {
+					display: flex;
+					flex-wrap: wrap;
+				}
+				
+				#header nav ul li {
+					width: calc(50% - 1em);
+				}
 			}
 		</style>
 	</head>
@@ -36,6 +140,7 @@
 						<div class="content">
 							<div class="inner">
 								<h1>MUHAMMAD UMER SIDDIQUI</h1>
+								<p>AI/ML Developer | LLM Developer</p>
 							</div>
 						</div>
 						<nav>
@@ -57,10 +162,10 @@
 								<h2 class="major">Intro</h2>
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 								<h2 class="major">AI/ML ENGINEER</h2>
-								<p>As an AI Developer/Engineer with a passion for pushing the boundaries of technology, I specialize in developing and deploying advanced machine learning models and AI systems that drive meaningful impact. My expertise spans across computer vision, natural language processing, deep learning, and large language models (LLMs), where I’ve successfully built and integrated AI-driven solutions for a variety of applications—including violence detection, facial recognition, AI agents, intelligent chatbots, and predictive analytics.</a>.</p>
-								<p>With hands-on experience in building conversational agents using LLMs and frameworks like LangChain and OpenAI APIs, I’ve developed smart, context-aware chatbots capable of assisting users, automating tasks, and delivering seamless user experiences.</p>
+								<p>As an AI Developer/Engineer with a passion for pushing the boundaries of technology, I specialize in developing and deploying advanced machine learning models and AI systems that drive meaningful impact. My expertise spans across computer vision, natural language processing, deep learning, and large language models (LLMs), where I've successfully built and integrated AI-driven solutions for a variety of applications—including violence detection, facial recognition, AI agents, intelligent chatbots, and predictive analytics.</p>
+								<p>With hands-on experience in building conversational agents using LLMs and frameworks like LangChain and OpenAI APIs, I've developed smart, context-aware chatbots capable of assisting users, automating tasks, and delivering seamless user experiences.</p>
 								<p>Grounded in both theoretical knowledge and practical execution, I have a proven track record of solving complex problems through innovative AI technologies. My work is characterized by a commitment to continuous learning, a deep understanding of data, and a focus on creating scalable, efficient solutions that address real-world challenges.</p>
-								<p>I thrive in collaborative environments where I can contribute my skills to multidisciplinary teams, bringing ideas to life from concept to deployment. Currently, I'm also conducting research in reinforcement learning, with a focus on RL-based training methodologies and curiosity-driven exploration strategies. My goal is to harness the power of AI to create smarter, more efficient systems that make a difference in people’s lives.</p>
+								<p>I thrive in collaborative environments where I can contribute my skills to multidisciplinary teams, bringing ideas to life from concept to deployment. Currently, I'm also conducting research in reinforcement learning, with a focus on RL-based training methodologies and curiosity-driven exploration strategies. My goal is to harness the power of AI to create smarter, more efficient systems that make a difference in people's lives.</p>
 							</article>
 
 						<!-- Resume -->
@@ -71,6 +176,9 @@
 										<p>Your browser does not support PDFs. <a href="images/My Resume (1).pdf">Download the PDF</a>.</p>
 									</iframe>
 								</div>
+								<p class="text-center">
+									<a href="images/My Resume (1).pdf" class="button" download>Download Resume</a>
+								</p>
 							</article>
 						
 
@@ -82,19 +190,21 @@
 								<section>
 									<h3>Meeting Scheduling Agent</h3>
 									<p>Open AI API || Python Programming || Prompt Engineering || LangGraph || GCP || Firestore</p>
-									<p>As part of my role at the company, I Developed an intelligent Meeting Scheduling Agent capable of scheduling, canceling, and rescheduling meetings through WhatsApp.Leveraged OpenAI API, LangGraph, and prompt engineering to create a context-aware conversational flow.Deployed the solution on Google Cloud Platform (GCP) with Firestore as the real-time database.Designed to streamline meeting management with seamless natural language interactions.</p>
+									<p>As part of my role at the company, I developed an intelligent Meeting Scheduling Agent capable of scheduling, canceling, and rescheduling meetings through WhatsApp. This agent was built under the supervision and collaboration of Anthropic AI engineers and myself. Leveraged OpenAI API, LangGraph, and prompt engineering to create a context-aware conversational flow. Deployed the solution on Google Cloud Platform (GCP) with Firestore as the real-time database. Designed to streamline meeting management with seamless natural language interactions.</p>
 									<div class="image-gallery">
 										<span class="image"><img src="images/scheduling1.jpg" alt="Meeting Scheduling Screenshot 1" /></span>
 										<span class="image"><img src="images/schedule2.jpg" alt="Meeting Scheduling Screenshot 2" /></span>
 									</div>
-									<p><a href="https://xapiens-c0ac7.firebaseapp.com/" target="_blank">Visit Website</a></p>
+									<p><a href="https://xapiens-c0ac7.firebaseapp.com/" target="_blank" class="button">Visit Website</a></p>
 								</section>
 
 								<section>
-									<h3>Rag Chatbot </h3>
+									<h3>RAG Chatbot</h3>
 									<p>Open AI API || Python Programming || Prompt Engineering || PostgreSQL || Pgvector</p>
-									<p>Developed an RAG-based chatbot during my time at the company to retrieve and summarize product information from pre-scraped Amazon and other e-commerce data stored in PostgreSQL.Utilized OpenAI API, pgvector for semantic search, and prompt engineering to enable accurate, context-aware responses.</p>
+									<p>Developed a RAG-based chatbot during my time at the company to retrieve and summarize product information from pre-scraped Amazon and other e-commerce data stored in PostgreSQL. Utilized OpenAI API, pgvector for semantic search, and prompt engineering to enable accurate, context-aware responses.</p>
 								</section>
+
+								<h2 class="major">Personal Projects</h2>
 								<!-- Patient Face Recognition System Project -->
 								<section>
 									<h3>Face Recognition System</h3>
@@ -104,7 +214,7 @@
 										<span class="image"><img src="images/patient2.jpg" alt="Patient Face Recognition Screenshot 1" /></span>
 										<span class="image"><img src="images/patient1.jpg" alt="Patient Face Recognition Screenshot 2" /></span>
 									</div>
-									<p><a href="https://github.com/UmerSidiqui/Patient-Face-Recognition-Flask" target="_blank">View on GitHub</a></p>
+									<p><a href="https://github.com/UmerSidiqui/Patient-Face-Recognition-Flask" target="_blank" class="button">View on GitHub</a></p>
 								</section>
 
 								<!-- Violence Detector Project -->
@@ -116,7 +226,7 @@
 										<span class="image"><img src="images/voilence 1.jpg" alt="Violence Detector Screenshot 1" /></span>
 										<span class="image"><img src="images/voilence2.jpg" alt="Violence Detector Screenshot 2" /></span>
 									</div>
-									<p><a href="https://github.com/UmerSidiqui/Voilence-Detector-Flask" target="_blank">View on GitHub</a></p>
+									<p><a href="https://github.com/UmerSidiqui/Voilence-Detector-Flask" target="_blank" class="button">View on GitHub</a></p>
 								</section>
 
 								<!-- AI Space Invaders Project -->
@@ -127,7 +237,7 @@
 									<div class="image-gallery">
 										<span class="image"><img src="images/spaceinvaders.jpg" alt="AI Space Invaders Screenshot 1" /></span>
 									</div>
-									<p><a href="https://github.com/UmerSidiqui/AI-space-invader-django" target="_blank">View on GitHub</a></p>
+									<p><a href="https://github.com/UmerSidiqui/AI-space-invader-django" target="_blank" class="button">View on GitHub</a></p>
 								</section>
 
 								<!-- AI Virtual Painter Project -->
@@ -139,7 +249,7 @@
 										<span class="image"><img src="images/paint1.jpg" alt="AI Virtual Painter Screenshot 1" /></span>
 										<span class="image"><img src="images/paint2.jpg" alt="AI Virtual Painter Screenshot 2" /></span>
 									</div>
-									<p><a href="https://github.com/UmerSidiqui/AI-virtual-painter-Django" target="_blank">View on GitHub</a></p>
+									<p><a href="https://github.com/UmerSidiqui/AI-virtual-painter-Django" target="_blank" class="button">View on GitHub</a></p>
 								</section>
 
 								<!-- BLDC Fan Data Analysis Project -->
@@ -150,7 +260,7 @@
 									<div class="image-gallery">
 										<span class="image"><img src="images/fan.jpg" alt="BLDC Fan Data Analysis Screenshot 1" /></span>
 									</div>
-									<p><a href="https://github.com/UmerSidiqui/Fan-Speed-Prediction-Flask-" target="_blank">View on GitHub</a></p>
+									<p><a href="https://github.com/UmerSidiqui/Fan-Speed-Prediction-Flask-" target="_blank" class="button">View on GitHub</a></p>
 								</section>
 
 								<!-- Space Shooter Game Project -->
@@ -161,7 +271,7 @@
 									<div class="image-gallery">
 										<span class="image"><img src="images/space shooter.jpg" alt="Space Shooter Game Screenshot 1" /></span>
 									</div>
-									<p><a href="https://github.com/UmerSidiqui/space-ship" target="_blank">View on GitHub</a></p>
+									<p><a href="https://github.com/UmerSidiqui/space-ship" target="_blank" class="button">View on GitHub</a></p>
 								</section>
 
 								<!-- Home Automations and IoT (Arduino) Project -->
@@ -172,34 +282,22 @@
 								</section>
 							</article>
 
-
-
 						<!-- Contact -->
 						<article id="contact">
 							<h2 class="major">Contact</h2>
-							<p>Email: <a href="mailto:um3rsiddiqui99@gmail.com">um3rsiddiqui99@gmail.com</a></p>
-							<p>Contact Number: 0341-8094081</p>
+							<p><i class="fa fa-envelope"></i> Email: <a href="mailto:um3rsiddiqui99@gmail.com">um3rsiddiqui99@gmail.com</a></p>
+							<p><i class="fa fa-phone"></i> Contact Number: 0341-8094081</p>
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/um3r-siddiqui/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/UmerSidiqui" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							</ul>
 						</article>
-								<ul class="icons">
-									<li><a href="https://www.linkedin.com/in/um3r-siddiqui/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://github.com/UmerSidiqui" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-						</article>
-
-						
-								
-									
-								
-								
-							
-
 					</div>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy;       </p>
+						<p class="copyright">&copy; 2025 Muhammad Umer Siddiqui. All rights reserved.</p>
 					</footer>
-
 			</div>
 
 		<!-- BG -->
@@ -211,6 +309,27 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			
+			<!-- Back to top button functionality -->
+			<script>
+				// Back to top button
+				$(document).ready(function() {
+					var backToTopButton = $('<a href="#" class="back-to-top"><i class="fa fa-arrow-up"></i></a>');
+					$('body').append(backToTopButton);
+					
+					$(window).scroll(function() {
+						if ($(window).scrollTop() > 300) {
+							backToTopButton.addClass('visible');
+						} else {
+							backToTopButton.removeClass('visible');
+						}
+					});
+					
+					backToTopButton.on('click', function(e) {
+						e.preventDefault();
+						$('html, body').animate({scrollTop: 0}, 800);
+					});
+				});
+			</script>
 	</body>
 </html>
