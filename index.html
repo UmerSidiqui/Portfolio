@@ -371,15 +371,14 @@ footer{
       <p class="role">System design · RAG pipelines · LangGraph orchestration · Production LLM infra</p>
       <p class="summary lede">Umer Siddiqui — I design and ship production LLM-powered systems end to end: APIs, auth, orchestration, and the cloud infrastructure underneath. Currently building voice AI and practice-management backends at Saynt AI.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="images/Umer_Siddiqui_Agentic_AI_CV.pdf" download>↓ Download CV</a>
-        <a class="btn btn-ghost" href="images/Umer_Siddiqui_Resume_2026.pdf" download>Résumé (1-Page)</a>
+        <a class="btn btn-primary" href="images/Umer_Siddiqui_Resume_2026.pdf" download>↓ Download Résumé</a>
         <a class="btn btn-ghost" href="#projects">View projects</a>
         <a class="btn btn-ghost" href="#contact">Get in touch</a>
       </div>
       <div class="factline">
         <div class="fact"><b>Karachi, PK</b>Based in</div>
         <div class="fact"><b>Saynt AI</b>Currently at</div>
-        <div class="fact"><b>NED University</b>B.E. Electrical Eng., 2026</div>
+        <div class="fact"><b>NED University</b>B.E. Electrical Eng., 2022 – 2026</div>
         <div class="fact"><b>Python · FastAPI · NestJS</b>Core stack</div>
       </div>
     </div>
@@ -468,10 +467,10 @@ footer{
           <h3>Senior AI Engineer</h3>
           <div class="company">Saynt AI</div>
           <ul>
-            <li>Own end-to-end backend development for a voice agent dashboard and a dental practice-management (PMS) platform — REST APIs, business logic, and authentication in NestJS/TypeScript, deployed on AWS.</li>
-            <li>Implemented authentication from the ground up, including Google OAuth login, across NestJS and FastAPI services.</li>
-            <li>Set up CI/CD for the NestJS backend with GitHub Actions — merges to main auto-deploy to AWS, no manual release steps.</li>
-            <li>Designed agentic workflows with LangGraph and RAG pipelines with webhook-based tool calling, integrating Twilio telephony and PMS backends (OpenDental, Dentrix) for low-latency, context-aware voice interactions.</li>
+            <li>Own backend development for a voice agent portal and dental practice-management (PMS) platform — REST APIs, authentication (Google OAuth 2.0 / JWT), and business logic in NestJS/TypeScript on AWS.</li>
+            <li>Engineered real-time telephony webhook engine in FastAPI integrating Twilio voice streams and ElevenLabs conversational voice agents for live patient call handling.</li>
+            <li>Benchmarked live telephony latency metrics: ASR processing (20–80 ms), streaming TTS generation (65–90 ms), and practice management tool execution (&lt;1.7 s), maintaining natural conversational turn-taking.</li>
+            <li>Designed a concurrency-safe booking lock mechanism to prevent double-booking during simultaneous inbound calls; integrated CPU-only, in-process ONNX embeddings for sub-100ms semantic RAG with automated PII log redaction.</li>
           </ul>
         </div>
       </div>
@@ -482,9 +481,9 @@ footer{
           <h3>Jr. AI Developer</h3>
           <div class="company">Erly Stage Studios</div>
           <ul>
-            <li>Built the full backend for a WhatsApp meeting-scheduling agent in FastAPI — webhook handling, agent orchestration (LangGraph + OpenAI), and state management.</li>
-            <li>Deployed on GCP with Firestore as the primary data store; collaborated with an Anthropic engineer on system architecture and scalability decisions.</li>
-            <li>Built a product Q&amp;A chatbot API in Flask over scraped product data in PostgreSQL, combining direct SQL queries with pgvector similarity search for hybrid structured + semantic retrieval; handed off for frontend integration.</li>
+            <li>Built an autonomous WhatsApp meeting scheduling agent in FastAPI with a multi-server Model Context Protocol (MCP) architecture, integrating Google Calendar event creation and dynamic timezone conversion.</li>
+            <li>Collaborated with an Anthropic engineer on prompt design, session state persistence, and error recovery flows.</li>
+            <li>Built an e-commerce catalog search service in Flask over PostgreSQL, combining exact relational SQL filtering with pgvector similarity search for hybrid retrieval with conversational query rephrasing.</li>
           </ul>
         </div>
       </div>
@@ -496,7 +495,7 @@ footer{
           <div class="company">NCL, NED University of Engineering &amp; Technology</div>
           <ul>
             <li>Delivered AI model development, EDA, and ML optimization projects with real-world business applications.</li>
-            <li>Built LocoBot, a lab-assistant robot combining real-time face recognition with a RAG chatbot for booking faculty meetings — used directly by students visiting the lab.</li>
+            <li>Implemented computer vision and RAG-based retrieval pipelines to automate internal laboratory and department workflows.</li>
           </ul>
         </div>
       </div>
@@ -516,9 +515,9 @@ footer{
     <div class="proj-card">
       <div class="proj-media"><div class="diagram" id="diag-fyp"></div></div>
       <div class="proj-body">
-        <h3>Novel Actor-Critic Algorithm for Reinforcement Learning</h3>
-        <div class="proj-stack">Reinforcement Learning · Actor-Critic · PyTorch · OpenAI Gym</div>
-        <p>Final year project. Proposed a modification to the critic function in standard Actor-Critic architectures, achieving state-of-the-art performance that surpassed prior baselines across multiple OpenAI Gym environments.</p>
+        <h3>Heuristics-Driven Soft Actor-Critic (SAC) Reinforcement Learning</h3>
+        <div class="proj-stack">Deep RL · PyTorch · OpenAI Gym · Academic Research</div>
+        <p>Undergraduate research supervised by Dr. Ali Baig (Assistant Professor, NED University). Reproduced and extended the foundation paper by Beikmohammadi &amp; Magnússon (Information Sciences, 2024), formulating a novel critic-side heuristic modification to the Soft Actor-Critic (SAC) value function update. Evaluated across continuous control benchmarks (CartPole, MountainCar, LunarLander, Pendulum, BipedalWalker) against Stable-Baselines3 SAC, TD3, DDPG, PPO, and Accelerated SAC across multiple random seeds; manuscript currently under peer review.</p>
       </div>
     </div>
 
@@ -528,18 +527,6 @@ footer{
         <h3>Enterprise Voice AI Agent</h3>
         <div class="proj-stack">ElevenLabs · Twilio · LangChain · RAG · PMS</div>
         <p>Intelligent appointment scheduler with RAG context retrieval, webhook tool-calling, and real-time telephony integration — built for low-latency production use on live phone calls.</p>
-      </div>
-    </div>
-
-    <div class="proj-card">
-      <div class="proj-media split">
-        <img src="images/patient1.jpg" alt="LocoBot recognizing a student in the lab" loading="lazy">
-        <img src="images/patient2.jpg" alt="LocoBot's meeting-booking chat interface" loading="lazy">
-      </div>
-      <div class="proj-body">
-        <h3>LocoBot — Face Recognition &amp; Faculty Meeting Assistant</h3>
-        <div class="proj-stack">DeepFace · VGG-Face · Flask · SQLite · RAG</div>
-        <p>Lab robot that recognizes students in real time via a Flask API backend and uses a RAG chatbot to help them book meetings with faculty members — deployed for live use in the lab.</p>
       </div>
     </div>
 
@@ -560,12 +547,12 @@ footer{
 
     <div class="proj-card">
       <div class="proj-media" style="display:flex; align-items:center; justify-content:center; background:#11141c; padding:16px;">
-        <img src="images/captcha-solver.png" alt="Autonomous Icon CAPTCHA Solver with YOLO and ResNet" loading="lazy" style="max-height:260px; width:auto; border-radius:6px; box-shadow:0 8px 24px rgba(0,0,0,0.5);">
+        <img src="images/captcha-solver.png" alt="Multi-Object Visual Reasoning and Spatial Orientation Pipeline" loading="lazy" style="max-height:260px; width:auto; border-radius:6px; box-shadow:0 8px 24px rgba(0,0,0,0.5);">
       </div>
       <div class="proj-body">
-        <h3>Autonomous Icon CAPTCHA Solver</h3>
-        <div class="proj-stack">YOLO · ResNet (Fine-Tuned) · PyTorch · OpenCV · Computer Vision</div>
-        <p>Engineered an end-to-end computer vision pipeline solving multi-stage icon verification challenges. Fine-tuned YOLO for target symbol localization and fine-tuned ResNet for feature representation and orientation classification; calculated rotational angles (e.g., 270°, 225°) and centroid click sequences to autonomously solve challenges with high accuracy.</p>
+        <h3>Multi-Object Visual Reasoning &amp; Spatial Alignment Pipeline</h3>
+        <div class="proj-stack">YOLO · ResNet-18 Siamese · PyTorch · OpenCV · ONNX Runtime · NetworkX</div>
+        <p>Built an automated computer vision inference pipeline for multi-symbol visual matching and orientation alignment under geometric clutter. Built a custom lightweight JavaScript local annotation tool, fine-tuned nano YOLO and ResNet models on Google Colab (NVIDIA T4 GPU), and deployed CPU-only in-process ONNX runtimes. Computed pairwise rotational cosine similarity tensors and executed maximum weight bipartite matching in NetworkX to output ordered coordinate click targets with &gt;98% accuracy.</p>
       </div>
     </div>
 
@@ -575,9 +562,9 @@ footer{
         <img src="images/vrv4energy.png" alt="VRV Cumulative Energy Consumption Graph (kWh)" loading="lazy" style="background:#fff; object-fit:contain; padding:4px;">
       </div>
       <div class="proj-body">
-        <h3>Industrial HVAC VRV Energy &amp; Performance Audit — SGS (British Council Library)</h3>
+        <h3>Commercial Facility VRV HVAC Energy &amp; Performance Audit</h3>
         <div class="proj-stack">Data Acquisition · Time-Series Analysis · IoT Energy Analyzers · Python · Thermodynamics</div>
-        <p>Executed an in-depth energy efficiency and thermodynamic audit for commercial VRV/VRF HVAC systems for SGS at the British Council Library. Captured and synchronized multi-sensor telemetry across refrigerant temperatures (cooling return, suction, discharge), pressures, and 3-phase power analyzer channels; analyzed compressor load profiles, active power spikes (18.28 kW to 23.5 kW), and cumulative kWh consumption to deliver data-backed efficiency recommendations.</p>
+        <p>Executed a 6-day onsite energy efficiency and thermodynamic audit for commercial VRV HVAC outdoor units in Karachi (October 2026). Installed 3-phase power quality analyzers and multi-channel loggers to synchronize electrical active power draw with compressor load cycles. Analyzed telemetry across electrical load, suction/discharge pressures, indoor cooling/return temperatures, compressor acoustic/vibration logs, and thermal airflow imaging; diagnosed frequent refrigerant leaks and mechanical degradation on a 10-year-old installation, delivering data-backed engineering recommendations for full system replacement.</p>
       </div>
     </div>
 
@@ -635,7 +622,7 @@ footer{
     <h2 class="section-title">Background.</h2>
     <p class="section-kicker"></p>
     <div class="edu-item">
-      <div class="edu-date">02/2022 — 08/2026</div>
+      <div class="edu-date">2022 — 2026</div>
       <div>
         <h3>B.E. Electrical Engineering</h3>
         <p>NED University of Engineering &amp; Technology · CGPA 2.6/4.0</p>
@@ -653,6 +640,13 @@ footer{
       <div>
         <h3>Secondary School (Matriculation)</h3>
         <p>CAA Model School and College, Karachi · BSEK Board · 755/850</p>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-date">Languages</div>
+      <div>
+        <h3>English (Professional), Urdu (Native), Turkish (Beginner)</h3>
+        <p>Spoken &amp; written technical communication</p>
       </div>
     </div>
   </div>
@@ -674,8 +668,7 @@ footer{
       </ul>
     </div>
     <div style="display:flex; flex-direction:column; gap:10px;">
-      <a class="btn btn-primary" href="images/Umer_Siddiqui_Agentic_AI_CV.pdf" download>↓ Download CV (2-Page)</a>
-      <a class="btn btn-ghost" href="images/Umer_Siddiqui_Resume_2026.pdf" download>↓ Download Résumé (1-Page)</a>
+      <a class="btn btn-primary" href="images/Umer_Siddiqui_Resume_2026.pdf" download>↓ Download Résumé</a>
     </div>
   </div>
 </section>
